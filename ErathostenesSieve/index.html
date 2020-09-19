@@ -1,42 +1,213 @@
+<!--
+    Dokument HTML określa strukturę fizyczną dokumentu strony, czyli to,
+    co zostanie wyświetlone w oknie przeglądarki.
+    Sam HTML nie jest językiem programowania (!) tylko językiem znaczników,
+    co można nawet zauważyć rozwijając akronim HTML - Hypertext Markup Language,
+    czyli hipertekstowy język znaczników.
+    Powstał on w ośrodku badawczym CERN, gdzie też powstała pierwsza
+    napisana w tym języku strona internetowa - działająca zresztą do dzisiaj
+    pod adresem http://info.cern.ch/hypertext/WWW/TheProject.html.
+    -----------------------------------------------------------------------------------------------
+    Znacznikiem rozpoczynającym każdy dokument HTML 5 jest DOCTYPE, który określa typ dokumentu.
+    Wcześniejsza wersja HTMLa rozróżniała kilka wersji typu dokumentu zależnie od używanych znaczników:
+    - Transitional
+    - Frameset
+    - Strict
+    Jednak (na szczęście) te czasy już minęły.
+    -----------------------------------------------------------------------------------------------
+    Podstawowy dokument HTML można wygenerować w prosty sposób używając dodatku
+    do m. in. Visual Studio Code, SublimeText czy Notepad++ o nazwie Emmet.
+    Pozwala on na utworzenie takiego wstępnego szablonu:
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        
+    </body>
+    </html>
+
+    Aby uzyskać taki efekt wystarczy w czystym dokumencie HTML (zapisanym w tym typie)
+    wpisać w oknie edycji dokumentu tekst: html:5, a następnie wcisnąć klawisz ENTER.
+-->
 <!DOCTYPE html>
+<!--
+    Kolejny znacznik otwoera dokument HTML.
+    Kiedyś, jako dodatkową informację określało się w nim również przestrzeń nazw języka XML,
+    ale podobnie jak wiele wersji typu dokumentu,
+    to również na szczęście należy już do przeszłości.
+    Jedyne co można tu określić, to język podstawowy wyświetlanych komunikwatów na stronie.
+-->
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-	<script src="script.js"></script>
-</head>
-<body>
-    <header>
-        <h1></h1>
-        <nav></nav>
-    </header>
-    <aside>
-        <div>
-            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum dolorum illum, laboriosam sequi illo corrupti ea vitae consequuntur pariatur, cupiditate labore, accusantium quas voluptatem? Cumque deserunt asperiores esse rem similique.</div>
-            <div>Necessitatibus debitis adipisci nesciunt sint recusandae hic repudiandae cupiditate, consequatur, fuga alias libero, veritatis doloribus. Omnis necessitatibus molestiae eius cum. Officiis saepe ratione quia velit, fugiat aspernatur molestias ullam voluptatum!</div>
-            <div>Vero provident natus obcaecati rem, blanditiis nihil autem eum explicabo officiis. Exercitationem praesentium sequi, vitae reprehenderit, amet odio eaque nesciunt mollitia perspiciatis itaque alias facere nam ab, veritatis libero doloremque.</div>
-        </div>
-    </aside>
-    <main>
-        <article>
-            <header>
-                <h2>Sito Eratostenesa</h2>
-            </header>
-            <section>
-                <form action="#" method="post" name="sieve" id="sieve">
-                    Podaj liczbę: <input type="text" name="number" id="" value="">
-                    <input type="submit" value="Wyświetl" id="submit">
-                </form>
-            </section>
-            <section>
+    <!--
+        Sekcja <head> dokumentu HTML zawiera wszystkie składniki potrzebne przeglądarce
+        do poprawnego wyświetlenia strony internetowej.
+        To właśnie w tym miejscu umieszczone są informacje na temat stylu
+        wszystkich elementów na stronie (w postaci kaskadowego arkusza stylów).
+        Tutaj także wprowadzane są dane na temat słów kluczowych używanych przez wyszukiwarki internetowe.
+    -->
+    <head>
+        <!--
+            Znaczniki <meta> określają jak ma być wyświetlana strona. Tutaj określa się kodowanie znaków,
+            domyślny rozmiar elementów na stronie, a także, co już wspomniane zostało wcześniej,
+            słów kluczowych używanych w dokumentach.
+            Słowa kluczowe potrzebne są wyszkiwarkom w celu sprawniejszego pozycjonowania strony.
+            Możliwe jest także użycie tzw. znaczników Open Graph.
+            Można w nich określić np. miniaturę wyświetlaną, kiedy udostępnimy stronę w mediach społecznościowych.
+        -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--
+            Znacznik <title> zawieta tytuł strony wyświetlany na górnym pasku okna przeglądarki lub na karcie z otwartą stroną.
+        -->
+        <title>Document</title>
+        <!--
+            Znaczniki <link> określają ładowane dodatkowe pliki do dokumentu HTML.
+            Może to być arkusz stylów CSS, zawartość dla czytników treści RSS i wiele innych.
+        -->
+        <link rel="stylesheet" href="style.css">
+        <!--
+            Znaczniki <script> ładują dodatkowe skrypty np. w języku JavaScript.
+            Aby ładować je na górze strony, a nie na końcu, jak często się robi,
+            konieczne jest wykorzystanie pewnego mechanizmu.
+            Opiszę to w pliku z załączonym skryptem.
+            
+            Skrypty można tworzyć ezpośrednio w kodzie HTML, jednak nie jest to zalecane ze względu na to,
+            że skrypt należy do warstwy logicznej dokumentu, którą, zgodnie ze standardem trzeba oddzielić
+            od struktury i wyglądu strony.
+        -->
+        <script src="script.js"></script>
+        <!--
+            Dodatkowymi elementami, które można załadowac w sekcji HEAD są style wprowadzane bezpośrednio w pliku.
+            Nie jest to zalecana technika ze względu na zasadę rozdzielności struktury dokumentu od jej wyglądu oraz logiki.
+        -->
+    </head>
+    <!--
+        Sekcja <body> zawiera wszystko, co zostanie wyświetlone na stronie internetowej.
+        Znajduje się tutaj kilka znaczników, które mogą przyprawić o ból głowy.
+        Są to:
+        - header
+        - aside
+        - main
+        - article
+        - section
+        - footer
+        Te znaczniki zostały dodane w wersji HTML 5 i nie są niczym innym, jak zwykłymi znacznikami <div>,
+        które po prostu dostały inne nazwy, aby łatwiej było je rozpoznać jako elementy strony.
+        Przykładowo <article> nie jest niczym innym, jak elementem tekstowym, <footer> to stopka itd.
+    -->
+    <body>
+        <!--
+            Element <header> może pojawiać się wiele razy na stronie.
+            Jest to po prostu określenie, że w tym miejscu znajduje się nagłówek jakiegoś elementu na stronie.
+            W tym przypadku pokazuje miejsce, gdzie jest nagłówek całej strony razem z paskiem nawigacyjnym,
+            który dla odmiany znajduje się w znaczniku <nav>.
+        -->
+        <header>
+            <!--
+                Znaczniki <h1> nie powinny wystepować więcej niż jeden raz na danej stronie.
+                Ten nagłówek zarezerwowany jest dla tytułu strony i pomaga w pozycjonowaniu strony w wyszukiwarkach.
+            -->
+            <h1></h1>
+            <!--
+                Znacznik <nav>, jak wspominałem wcześniej, zawiera pasek nawigacyjny.
+                Jednak żeby nikt nie pomyślał, że ten znacznik można użyć tylko raz na stronie.
+                W żadnym wypadku - można go używac tyle razy, ile trzeba. Przykładowo w znaczniku <aside>, czyli w panelu bocznym.
+            -->
+            <nav></nav>
+        </header>
+        <!--
+            Znacznik <aside> to panel boczny na stronie. Może w nim byc wyświetlane cokolwiek,
+            np. reklany lub dodatkowe menu kontekstowe.
+            Może też nie być wyświetlany w ogóle.
+        -->
+        <aside>
+            <div>
+                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum dolorum illum, laboriosam sequi illo corrupti ea vitae consequuntur pariatur, cupiditate labore, accusantium quas voluptatem? Cumque deserunt asperiores esse rem similique.</div>
+                <div>Necessitatibus debitis adipisci nesciunt sint recusandae hic repudiandae cupiditate, consequatur, fuga alias libero, veritatis doloribus. Omnis necessitatibus molestiae eius cum. Officiis saepe ratione quia velit, fugiat aspernatur molestias ullam voluptatum!</div>
+                <div>Vero provident natus obcaecati rem, blanditiis nihil autem eum explicabo officiis. Exercitationem praesentium sequi, vitae reprehenderit, amet odio eaque nesciunt mollitia perspiciatis itaque alias facere nam ab, veritatis libero doloremque.</div>
+            </div>
+        </aside>
+        <!--
+            W znaczniku <main> znajduje się główna zawartość strony internetowej.
+            Z założenia zawartość znajdująca się w tym znaczniku powinna być unikalna dla każdej strony.
+            Dlatego tutaj nie umieszcza się żadnych elementów, które pojawiają sie również na innych podstronach,
+            jak paski nawigacyjne, informacje o prawach autorskich, logo itp.
+            Tego typu element, podobnie jak <h1> powinien być na danej stronie tylko jeden.
+            Powinien on także znajdowac się bezpośrednio pod znacznikiem <body> w drzewie dokumentu.
+        -->
+        <main>
+            <!--
+                Nazwa znacznika <article> może być myląca.
+                W nim bowiem niekoniecznie trzeba umieszczać służszej formy wypowiedzi,
+                jaką jest rzeczywisty artykuł.
+                Znacznik <article> powinien zawierać tekst (nawet krótki),
+                który sam w sobie ma sens i może być rozpowszechniany jako pojedynczy element.
+                Nie oznacza to, że znacznik <article> może być tylko jeden na stronie - wręcz przeciwnie,
+                może ich być tyle, ile różnych tekstów chcemy na niej umieścić.
+                Ważne jest tylko to co napisałem wcześniej, czyli że treść wewnątrz pojedynczego znacznika <article>
+                musi mieć wspólny mianownik.
+            -->
+            <article>
+                <!--
+                    W tym przypadku znacznik <header> określa nagłówek zawartego w znaczniku <article> tekstu.
+                    Uzyty wewnątrz znacznik <h2> jest niższego poziomy niż <h1> użytego w nagłówku strony
+                    i może on być używany wiele razy na jednej stronie (każdy artykuł ma swój własny tytuł).
+                -->
                 <header>
-                    <h3 id="hidden" class="hidden">Liczby pierwsze w zakresie 1 - <span id="limit"></span></h3>
+                    <h2>Sito Eratostenesa</h2>
                 </header>
-                <div id="numbers" class="row"></div>
-            </section>
-        </article>
-    </main>
-</body>
+                <!--
+                    Znacznik <section> dokłada funkcjonalność podziało "artykułu" na mniejsze fragmenty.
+                -->
+                <section>
+                    <!--
+                        W tym miejscu można wstawić również formularz, jeśli jest on częścią "artykułu",
+                        to znaczy jest powiązany z treścią zawartą w znaczniku <article>.
+                        Znacznik <form> wstawia na stronę formlarz, który pozwala na interakcję użytkownika ze stroną.
+                        Artybut action określa skrypt lub stronę ładowaną po wysłaniu formularza do przetworzenia.
+                        W tym przypadku jest to znak #, który nie robi nic.
+                        Metoda zastosowana do wysłania formularza, czyli POST jest jedną z dwóch możliwych metod przesyłania formularza
+                        z dokumentu HTML.
+                        Formularze można przesyłać w postaci jawnego tekstu (GET) lub w ukrytej tablicy (POST).
+                        Wszystko jest zależne od zastosowania danych, które wysyłane są formularzem.
+                        Przykładowo jeśli jest to formularz logowania, to trudno sibie wyobrazić wysyłanie danych jawnym tekstem,
+                        który każdy użytkownik może odczytać nawet niespecjalnie się wysilając.
+                        Dane wysyłane metodą GET widoczne sa na pasku adresu w przeglądarce internetowej.
+                        Dobrze to obrazuje strona wyszukiwarki Google, gdzie po wyszukaniu jakiejkolwiek frazy, np. "HTML",
+                        na pasku adresu pojawi się tekst: https://www.google.com/search?q=HTML.
+                        Jak łatwo zauważyć, zapytanie wyszukiwania zostało po prostu wstawione w pasek adresu.
+                        Drugą metodą wysyłania formuarza jest POST, która nie wyświetla danych wpisanych w pola formularza na pasku adresu,
+                        tylko zapisuje w specjalnej tablicy wysyłanej w formie zaszyfrowanej (jeśli strona obsługuje szyfrowanie, np. SSL/TLS).
+                    -->
+                    <form action="#" method="post" name="sieve" id="sieve">
+                        <label for="number">Podaj liczbę:</label>
+                        <input type="text" name="number" id="number" value="">
+                        <input type="submit" value="Wyświetl" id="submit">
+                    </form>
+                </section>
+                <section>
+                    <!--
+                        Sekcja również może mieć swój nagłówek,
+                        tak samo jak artykuły podzielone na mniejsze fragmenty mają swoje podtytuły.
+                    -->
+                    <header>
+                        <h3 id="hidden" class="hidden">Liczby pierwsze w zakresie 1 - <span id="limit"></span></h3>
+                    </header>
+                    <div id="numbers" class="row"></div>
+                </section>
+            </article>
+        </main>
+        <!--
+            Znacznik <footer>, jak nazwa wskazuje dodaje do strony stopkę, w której można umieścić informacje o licencji, prawach autorskich,
+            a także inne elementy, które często umieszcza się na dole strony.
+        -->
+        <footer>
+            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat voluptates sapiente sit mollitia ut aperiam soluta nostrum impedit distinctio praesentium totam quos hic officia harum nulla, est quidem laboriosam explicabo!</div>
+        </footer>
+    </body>
 </html>
