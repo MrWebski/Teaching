@@ -15,6 +15,10 @@ $col-sizes: (1: 8.33%, 2: 16.66%, 3: 25%, 4: 33.33%, 5: 41.66%, 6: 50%, 7: 58.33
 	margin: 0;
 }
 
+html, body {
+	height: 100%;
+}
+
 body {
 	background-color: #fff;
 }
