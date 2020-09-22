@@ -17,30 +17,17 @@
     -----------------------------------------------------------------------------------------------
     Podstawowy dokument HTML można wygenerować w prosty sposób używając dodatku
     do m. in. Visual Studio Code, SublimeText czy Notepad++ o nazwie Emmet.
-    Pozwala on na utworzenie takiego wstępnego szablonu:
-
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
-        
-    </body>
-    </html>
-
+    Pozwala on na utworzenie wstępnego szablonu.
     Aby uzyskać taki efekt wystarczy w czystym dokumencie HTML (zapisanym w tym typie)
     wpisać w oknie edycji dokumentu tekst: html:5, a następnie wcisnąć klawisz ENTER.
 -->
 <!DOCTYPE html>
 <!--
-    Kolejny znacznik otwoera dokument HTML.
+    Kolejny znacznik otwiera dokument HTML.
     Kiedyś, jako dodatkową informację określało się w nim również przestrzeń nazw języka XML,
     ale podobnie jak wiele wersji typu dokumentu,
     to również na szczęście należy już do przeszłości.
-    Jedyne co można tu określić, to język podstawowy wyświetlanych komunikwatów na stronie.
+    Jedyne co można tu określić, to język podstawowy wyświetlanych komunikatów na stronie.
 -->
 <html lang="en">
     <!--
@@ -55,14 +42,14 @@
             Znaczniki <meta> określają jak ma być wyświetlana strona. Tutaj określa się kodowanie znaków,
             domyślny rozmiar elementów na stronie, a także, co już wspomniane zostało wcześniej,
             słów kluczowych używanych w dokumentach.
-            Słowa kluczowe potrzebne są wyszkiwarkom w celu sprawniejszego pozycjonowania strony.
+            Słowa kluczowe potrzebne są wyszukiwarkom w celu sprawniejszego pozycjonowania strony.
             Możliwe jest także użycie tzw. znaczników Open Graph.
             Można w nich określić np. miniaturę wyświetlaną, kiedy udostępnimy stronę w mediach społecznościowych.
         -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--
-            Znacznik <title> zawieta tytuł strony wyświetlany na górnym pasku okna przeglądarki lub na karcie z otwartą stroną.
+            Znacznik <title> zawiera tytuł strony wyświetlany na górnym pasku okna przeglądarki lub na karcie z otwartą stroną.
         -->
         <title>Document</title>
         <!--
@@ -76,13 +63,13 @@
             konieczne jest wykorzystanie pewnego mechanizmu.
             Opiszę to w pliku z załączonym skryptem.
             
-            Skrypty można tworzyć ezpośrednio w kodzie HTML, jednak nie jest to zalecane ze względu na to,
+            Skrypty można tworzyć bezpośrednio w kodzie HTML, jednak nie jest to zalecane ze względu na to,
             że skrypt należy do warstwy logicznej dokumentu, którą, zgodnie ze standardem trzeba oddzielić
             od struktury i wyglądu strony.
         -->
         <script src="script.js"></script>
         <!--
-            Dodatkowymi elementami, które można załadowac w sekcji HEAD są style wprowadzane bezpośrednio w pliku.
+            Dodatkowymi elementami, które można załadować w sekcji HEAD są style wprowadzane bezpośrednio w pliku.
             Nie jest to zalecana technika ze względu na zasadę rozdzielności struktury dokumentu od jej wyglądu oraz logiki.
         -->
     </head>
@@ -109,23 +96,32 @@
         -->
         <header>
             <!--
-                Znaczniki <h1> nie powinny wystepować więcej niż jeden raz na danej stronie.
+                Znaczniki <h1> nie powinny występować więcej niż jeden raz na danej stronie.
                 Ten nagłówek zarezerwowany jest dla tytułu strony i pomaga w pozycjonowaniu strony w wyszukiwarkach.
             -->
             <h1></h1>
             <!--
                 Znacznik <nav>, jak wspominałem wcześniej, zawiera pasek nawigacyjny.
                 Jednak żeby nikt nie pomyślał, że ten znacznik można użyć tylko raz na stronie.
-                W żadnym wypadku - można go używac tyle razy, ile trzeba. Przykładowo w znaczniku <aside>, czyli w panelu bocznym.
+                W żadnym wypadku - można go używać tyle razy, ile trzeba. Przykładowo w znaczniku <aside>, czyli w panelu bocznym.
             -->
             <nav></nav>
         </header>
         <!--
             Znacznik <aside> to panel boczny na stronie. Może w nim byc wyświetlane cokolwiek,
-            np. reklany lub dodatkowe menu kontekstowe.
+            np. reklamy lub dodatkowe menu kontekstowe.
             Może też nie być wyświetlany w ogóle.
         -->
         <aside>
+            <!--
+                Zawartość znacznika <aside>, to wygenerowany "zapychacz" w postaci tzw. Lorem ipsum.
+                Sam tekst jest zlepkiem różnych traktatów filozoficznych,
+                który sam w sobie nie ma żadnego znaczenia.
+                Służy on twórcom (nie tylko stron internetowych) do sprawdzenia przepływu tekstu
+                w różnych blokach w tworzonym materiale.
+                Chodzi o to, żeby osoba testująca nie skupiała się na zawartości i znaczeniu tekstu,
+                a jedynie na tym, czy tekst dobrze układa się w danym elemencie.
+            -->
             <div>
                 <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum dolorum illum, laboriosam sequi illo corrupti ea vitae consequuntur pariatur, cupiditate labore, accusantium quas voluptatem? Cumque deserunt asperiores esse rem similique.</div>
                 <div>Necessitatibus debitis adipisci nesciunt sint recusandae hic repudiandae cupiditate, consequatur, fuga alias libero, veritatis doloribus. Omnis necessitatibus molestiae eius cum. Officiis saepe ratione quia velit, fugiat aspernatur molestias ullam voluptatum!</div>
@@ -138,12 +134,12 @@
             Dlatego tutaj nie umieszcza się żadnych elementów, które pojawiają sie również na innych podstronach,
             jak paski nawigacyjne, informacje o prawach autorskich, logo itp.
             Tego typu element, podobnie jak <h1> powinien być na danej stronie tylko jeden.
-            Powinien on także znajdowac się bezpośrednio pod znacznikiem <body> w drzewie dokumentu.
+            Powinien on także znajdować się bezpośrednio pod znacznikiem <body> w drzewie dokumentu.
         -->
         <main>
             <!--
                 Nazwa znacznika <article> może być myląca.
-                W nim bowiem niekoniecznie trzeba umieszczać służszej formy wypowiedzi,
+                W nim bowiem niekoniecznie trzeba umieszczać dłuższej formy wypowiedzi,
                 jaką jest rzeczywisty artykuł.
                 Znacznik <article> powinien zawierać tekst (nawet krótki),
                 który sam w sobie ma sens i może być rozpowszechniany jako pojedynczy element.
@@ -155,7 +151,7 @@
             <article>
                 <!--
                     W tym przypadku znacznik <header> określa nagłówek zawartego w znaczniku <article> tekstu.
-                    Uzyty wewnątrz znacznik <h2> jest niższego poziomy niż <h1> użytego w nagłówku strony
+                    Użyty wewnątrz znacznik <h2> jest niższego poziomy niż <h1> użytego w nagłówku strony
                     i może on być używany wiele razy na jednej stronie (każdy artykuł ma swój własny tytuł).
                 -->
                 <header>
@@ -168,20 +164,20 @@
                     <!--
                         W tym miejscu można wstawić również formularz, jeśli jest on częścią "artykułu",
                         to znaczy jest powiązany z treścią zawartą w znaczniku <article>.
-                        Znacznik <form> wstawia na stronę formlarz, który pozwala na interakcję użytkownika ze stroną.
-                        Artybut action określa skrypt lub stronę ładowaną po wysłaniu formularza do przetworzenia.
+                        Znacznik <form> wstawia na stronę formularz, który pozwala na interakcję użytkownika ze stroną.
+                        Atrybut action określa skrypt lub stronę ładowaną po wysłaniu formularza do przetworzenia.
                         W tym przypadku jest to znak #, który nie robi nic.
                         Metoda zastosowana do wysłania formularza, czyli POST jest jedną z dwóch możliwych metod przesyłania formularza
                         z dokumentu HTML.
                         Formularze można przesyłać w postaci jawnego tekstu (GET) lub w ukrytej tablicy (POST).
                         Wszystko jest zależne od zastosowania danych, które wysyłane są formularzem.
-                        Przykładowo jeśli jest to formularz logowania, to trudno sibie wyobrazić wysyłanie danych jawnym tekstem,
+                        Przykładowo jeśli jest to formularz logowania, to trudno sobie wyobrazić wysyłanie danych jawnym tekstem,
                         który każdy użytkownik może odczytać nawet niespecjalnie się wysilając.
                         Dane wysyłane metodą GET widoczne sa na pasku adresu w przeglądarce internetowej.
                         Dobrze to obrazuje strona wyszukiwarki Google, gdzie po wyszukaniu jakiejkolwiek frazy, np. "HTML",
                         na pasku adresu pojawi się tekst: https://www.google.com/search?q=HTML.
                         Jak łatwo zauważyć, zapytanie wyszukiwania zostało po prostu wstawione w pasek adresu.
-                        Drugą metodą wysyłania formuarza jest POST, która nie wyświetla danych wpisanych w pola formularza na pasku adresu,
+                        Drugą metodą wysyłania formularza jest POST, która nie wyświetla danych wpisanych w pola formularza na pasku adresu,
                         tylko zapisuje w specjalnej tablicy wysyłanej w formie zaszyfrowanej (jeśli strona obsługuje szyfrowanie, np. SSL/TLS).
                     -->
                     <form action="#" method="post" name="sieve" id="sieve">
