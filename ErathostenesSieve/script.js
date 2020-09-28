@@ -220,8 +220,9 @@ window.addEventListener('DOMContentLoaded', function() {
 			/**
 			 * Tworzony element div, w którym zostanie wyświetlona liczba.
 			 */
-			let div = document.createElement('div');
-			numbers.appendChild(div).innerHTML = num;
+			let col = document.createElement('div');
+			col.classList.add('col-xxs-12', 'col-xs-12', 'col-s-12', 'col-m-6', 'col-l-6', 'col-xl-3', 'col-xxl-1', 'text-right');
+			numbers.appendChild(col).appendChild(document.createElement('div')).innerHTML = num;
 		});
 	});
 });
