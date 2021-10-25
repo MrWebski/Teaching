@@ -26,14 +26,12 @@ body {
 
 [class*="col-"] {
 	display: inline-block;
-}
-
-[class*="col-"] div {
-	padding: 5px;
-}
-
-[class*="col-"] div:hover {
-	background-color: #eee;
+	div {
+		padding: 5px;
+	}
+	div:hover {
+		background-color: #eee;
+	}
 }
 
 .container {
@@ -50,22 +48,21 @@ nav {
 	height: 40px;
 	padding-top: 5px;
 	padding-bottom: 5px;
-}
-
-nav > ul > li {
-	padding: 10px;
-	display: inline-block;
-	list-style: none;
+	> ul > li {
+		padding: 10px;
+		display: inline-block;
+		list-style: none;
+	}
 }
 
 aside {
 	float: left;
 	width: 30%;
-}
-
-aside > div {
-	padding-right: 15px;
-	padding-left: 15px;
+	
+	> div {
+		padding-right: 15px;
+		padding-left: 15px;
+	}
 }
 
 main {
@@ -75,16 +72,16 @@ main {
 
 article {
 	width: 100%;
-}
 
-article > header {
-	font-size: 1.5em;
-	padding: 5px;
-	border-bottom: 1px dotted #000;
-}
+	> header {
+		font-size: 1.5em;
+		padding: 5px;
+		border-bottom: 1px dotted #000;
+	}
 
-article > section {
-	padding: 5px;
+	> section {
+		padding: 5px;
+	}
 }
 
 footer {
